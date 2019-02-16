@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScalableCapitalTaskAbodeif/ViewControllers/RepositoriesTableViewController.swift"
-            timestampString = "572032755.395694"
+            timestampString = "572033515.238869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "fetchDataFromServer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScalableCapitalTaskAbodeif/ViewControllers/RepositoriesTableViewController.swift"
-            timestampString = "572032755.395764"
+            timestampString = "572033515.2392991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "fetchDataFromServer()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ScalableCapitalTaskAbodeif/ViewControllers/RepositoriesTableViewController.swift"
-            timestampString = "572032755.395817"
+            timestampString = "572033515.239629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "fetchPresistantData()"
             landmarkType = "7">
          </BreakpointContent>

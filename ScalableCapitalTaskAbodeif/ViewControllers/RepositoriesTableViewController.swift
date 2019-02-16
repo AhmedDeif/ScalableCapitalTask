@@ -17,7 +17,7 @@ class RepositoriesTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        fetchPresistantData()
+        fetchPresistantData()
     }
     
     override func viewDidLoad() {
@@ -34,16 +34,44 @@ class RepositoriesTableViewController: UITableViewController {
     }
     
     
+    @IBAction func pullToRefresh(_ sender: UIRefreshControl) {
+        NetworkManager.shared().loadRepos(url: API.getAllRepos) { (isSuccess, response) in
+            if isSuccess {
+                self.repositoryViewModels.removeAll()
+                for repo in response! {
+                    let viewModel = RepositoryViewModel()
+                    viewModel.repository = repo
+                    self.repositoryViewModels.append(viewModel)
+                }
+                // I need to delete the data already saved as well
+                self.saveData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            else {
+                print("Failed to fetch repos from network")
+            }
+            sender.endRefreshing()
+        }
+    }
+    
+    
     func fetchPresistantData() {
         let managedContext = NetworkManager.getManagedContext()
         let fetchRequest =
             NSFetchRequest<Repository>(entityName: "Repository")
         do {
             if let repos = try managedContext?.fetch(fetchRequest) {
-                for repo in repos {
-                    let viewModel = RepositoryViewModel()
-                    viewModel.repository = repo
-                    self.repositoryViewModels.append(viewModel)
+                if repos.count > 0 {
+                    for repo in repos {
+                        let viewModel = RepositoryViewModel()
+                        viewModel.repository = repo
+                        self.repositoryViewModels.append(viewModel)
+                    }
+                }
+                else {
+                    fetchDataFromServer()
                 }
             }
         }
