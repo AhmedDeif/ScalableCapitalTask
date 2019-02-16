@@ -44,7 +44,9 @@ class RepositoryTableViewCell: UITableViewCell {
             else {
                 self.repoCommitMessageUILabel.text = "No Commit Message"
             }
-            activityIndicator.stopAnimating()
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+            }
         }
     }
     

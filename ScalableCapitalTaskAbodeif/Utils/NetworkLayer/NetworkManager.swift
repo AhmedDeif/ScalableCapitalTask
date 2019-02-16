@@ -7,22 +7,32 @@
 //
 
 import Foundation
+import CoreData
 
 class NetworkManager {
     
+    
     private var urlSession: URLSession
+    private var presistantContainer: NSPersistentContainer?
+    
     static private var sharedManager: NetworkManager = {
         let urlSession = URLSession(configuration: .default)
         let manager = NetworkManager(urlSession: urlSession)
         return manager
     }()
     
+    
     private init(urlSession: URLSession) {
         self.urlSession = urlSession
     }
     
+    
     class func shared() -> NetworkManager {
         return sharedManager
+    }
+    
+    class func setPresistantLayer(presistantContainer: NSPersistentContainer) {
+        self.shared().presistantContainer = presistantContainer
     }
     
     func loadRepos(url: String, completition: @escaping ((_ callSucceeded: Bool, _ result: [RepositoryModel]?)->())) {
@@ -36,13 +46,26 @@ class NetworkManager {
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case (200..<300):
+                    
                     print("call success")
                     if let data = data {
-                        guard let parsedResponse = try? JSONDecoder().decode([RepositoryModel].self, from: data) else {
-                            print("failes to parse")
+                        guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+                            fatalError("Failed to retrieve context")
+                        }
+                        let managedObjectContext = self.presistantContainer?.viewContext
+                        let decoder = JSONDecoder()
+                        decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
+                        guard let parsedResponse = try? decoder.decode([RepositoryModel].self, from: data) else {
+                            print("could not parse")
                             completition(false, nil)
                             return
                         }
+                        
+//                        guard let parsedResponse = try? JSONDecoder().decode([RepositoryModel].self, from: data) else {
+//                            print("failes to parse")
+//                            completition(false, nil)
+//                            return
+//                        }
                         // I have the data parsed
                         completition(true, parsedResponse)
                     }

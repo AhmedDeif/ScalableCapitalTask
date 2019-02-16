@@ -20,6 +20,7 @@
 		422A370322186651003D15E3 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A370222186651003D15E3 /* RepositoryModel.swift */; };
 		422A37052218685A003D15E3 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A37042218685A003D15E3 /* RepositoryViewModel.swift */; };
 		422A370722186B90003D15E3 /* CommitDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A370622186B90003D15E3 /* CommitDetailsModel.swift */; };
+		422A37092218765D003D15E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A37082218765D003D15E3 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		422A370222186651003D15E3 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		422A37042218685A003D15E3 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		422A370622186B90003D15E3 /* CommitDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailsModel.swift; sourceTree = "<group>"; };
+		422A37082218765D003D15E3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				422A36F22218605C003D15E3 /* NetworkLayer */,
 				422A36F6221860A1003D15E3 /* Constants.swift */,
+				422A37082218765D003D15E3 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				422A36DC22185FDB003D15E3 /* AppDelegate.swift in Sources */,
 				422A370722186B90003D15E3 /* CommitDetailsModel.swift in Sources */,
 				422A36E422185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld in Sources */,
+				422A37092218765D003D15E3 /* Extensions.swift in Sources */,
 				422A36F7221860A1003D15E3 /* Constants.swift in Sources */,
 				422A36FE221861C4003D15E3 /* RepositoryTableViewCell.swift in Sources */,
 				422A370322186651003D15E3 /* RepositoryModel.swift in Sources */,
