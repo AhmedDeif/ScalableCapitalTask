@@ -14,4 +14,5 @@ struct Constants {
 
 struct API {
     static let getAllRepos = "https://api.github.com/users/mralexgray/repos"
+    static let getRepoCommitsPrefix = "https://api.github.com/repos/mralexgray/"
 }

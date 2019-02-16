@@ -17,9 +17,9 @@ class RepositoriesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 120
         registerCells()
-//        fetchData()
-        fetchCommitTest()
+        fetchData()
     }
 
     
@@ -47,15 +47,7 @@ class RepositoriesTableViewController: UITableViewController {
         }
     }
     
-    func fetchCommitTest() {
-//        https://api.github.com/repos/mralexgray/ACEView/commits
-        NetworkManager.shared().loadCommits(url: "https://api.github.com/repos/mralexgray/ACEView/commits") { (isSuccess, response) in
-            if isSuccess {
-                let commit = response?[0]
-                print(commit)
-            }
-        }
-    }
+
     
     // MARK: - Table view data source
 
@@ -74,6 +66,7 @@ class RepositoriesTableViewController: UITableViewController {
         if viewModel.repository != nil {
             cell.setData(fromModel: viewModel.repository!)
         }
+        cell.loadCommits(forViewModel: viewModel)
         return cell
     }
 
