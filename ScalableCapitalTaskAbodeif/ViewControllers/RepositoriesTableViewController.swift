@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class RepositoriesTableViewController: UITableViewController {
 
@@ -14,12 +15,17 @@ class RepositoriesTableViewController: UITableViewController {
     var repositoryViewModels: [RepositoryViewModel] = []
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        fetchPresistantData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.estimatedRowHeight = 120
+        self.tableView.allowsSelection = false
         registerCells()
-        fetchData()
+        fetchDataFromServer()
     }
 
     
@@ -28,7 +34,25 @@ class RepositoriesTableViewController: UITableViewController {
     }
     
     
-    func fetchData() {
+    func fetchPresistantData() {
+        let managedContext = NetworkManager.getManagedContext()
+        let fetchRequest =
+            NSFetchRequest<Repository>(entityName: "Repository")
+        do {
+            if let repos = try managedContext?.fetch(fetchRequest) {
+                for repo in repos {
+                    let viewModel = RepositoryViewModel()
+                    viewModel.repository = repo
+                    self.repositoryViewModels.append(viewModel)
+                }
+            }
+        }
+        catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func fetchDataFromServer() {
         NetworkManager.shared().loadRepos(url: API.getAllRepos) { (isSuccess, response) in
             if isSuccess {
                 self.repositoryViewModels.removeAll()
@@ -37,6 +61,8 @@ class RepositoriesTableViewController: UITableViewController {
                     viewModel.repository = repo
                     self.repositoryViewModels.append(viewModel)
                 }
+                // I need to delete the data already saved as well
+                self.saveData()
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -44,6 +70,16 @@ class RepositoriesTableViewController: UITableViewController {
             else {
                 print("Failed to fetch repos from network")
             }
+        }
+    }
+    
+    func saveData() {
+        let viewContext = NetworkManager.getManagedContext()
+        do {
+            try viewContext?.save()
+        }
+        catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
         }
     }
     
@@ -66,7 +102,8 @@ class RepositoriesTableViewController: UITableViewController {
         if viewModel.repository != nil {
             cell.setData(fromModel: viewModel.repository!)
         }
-        cell.loadCommits(forViewModel: viewModel)
+        cell.myIndexPath = indexPath
+        cell.loadCommits(forViewModel: viewModel, indexPath: indexPath.row)
         return cell
     }
 

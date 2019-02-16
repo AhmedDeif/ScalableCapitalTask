@@ -35,7 +35,11 @@ class NetworkManager {
         self.shared().presistantContainer = presistantContainer
     }
     
-    func loadRepos(url: String, completition: @escaping ((_ callSucceeded: Bool, _ result: [RepositoryModel]?)->())) {
+    class func getManagedContext() -> NSManagedObjectContext? {
+        return self.shared().presistantContainer?.viewContext
+    }
+    
+    func loadRepos(url: String, completition: @escaping ((_ callSucceeded: Bool, _ result: [Repository]?)->())) {
         guard let urlObject = URL(string: url) else {
             // malformed URL
             completition(false, nil)
@@ -46,8 +50,6 @@ class NetworkManager {
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case (200..<300):
-                    
-                    print("call success")
                     if let data = data {
                         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
                             fatalError("Failed to retrieve context")
@@ -55,17 +57,11 @@ class NetworkManager {
                         let managedObjectContext = self.presistantContainer?.viewContext
                         let decoder = JSONDecoder()
                         decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
-                        guard let parsedResponse = try? decoder.decode([RepositoryModel].self, from: data) else {
+                        guard let parsedResponse = try? decoder.decode([Repository].self, from: data) else {
                             print("could not parse")
                             completition(false, nil)
                             return
                         }
-                        
-//                        guard let parsedResponse = try? JSONDecoder().decode([RepositoryModel].self, from: data) else {
-//                            print("failes to parse")
-//                            completition(false, nil)
-//                            return
-//                        }
                         // I have the data parsed
                         completition(true, parsedResponse)
                     }
@@ -90,14 +86,12 @@ class NetworkManager {
             if let httpResponse = response as? HTTPURLResponse {
                 switch httpResponse.statusCode {
                 case (200..<300):
-                    print("call success")
                     if let data = data {
                         guard let parsedResponse = try? JSONDecoder().decode([CommitModel].self, from: data) else {
                             print("failes to parse")
                             completition(false, nil)
                             return
                         }
-                        // I have the data parsed
                         completition(true, parsedResponse)
                     }
                 default:

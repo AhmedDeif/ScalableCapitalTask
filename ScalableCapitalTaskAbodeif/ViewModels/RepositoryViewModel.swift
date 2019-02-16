@@ -11,7 +11,7 @@ import Foundation
 class RepositoryViewModel {
     
     var isDataTaskInProgress: Bool = false
-    var repository: RepositoryModel?
+    var repository: Repository?
     
     
     func fetchCommitTest(completition: @escaping ((_ callSucceeded: Bool, _ result: CommitModel?)->())) {

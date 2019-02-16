@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class RepositoryModel: NSManagedObject, Codable {
+class Repository: NSManagedObject, Codable {
     
     @NSManaged var name: String?
     
