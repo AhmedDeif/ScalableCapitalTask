@@ -14,6 +14,8 @@
 		422A36E922185FDB003D15E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422A36E722185FDB003D15E3 /* LaunchScreen.storyboard */; };
 		422A36F7221860A1003D15E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A36F6221860A1003D15E3 /* Constants.swift */; };
 		422A36FB22186175003D15E3 /* RepositoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A36FA22186175003D15E3 /* RepositoriesTableViewController.swift */; };
+		422A36FE221861C4003D15E3 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A36FC221861C4003D15E3 /* RepositoryTableViewCell.swift */; };
+		422A36FF221861C4003D15E3 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422A36FD221861C4003D15E3 /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		422A36EA22185FDB003D15E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		422A36F6221860A1003D15E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		422A36FA22186175003D15E3 /* RepositoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesTableViewController.swift; sourceTree = "<group>"; };
+		422A36FC221861C4003D15E3 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		422A36FD221861C4003D15E3 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 		422A36F8221860B8003D15E3 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				422A36FC221861C4003D15E3 /* RepositoryTableViewCell.swift */,
+				422A36FD221861C4003D15E3 /* RepositoryTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -187,6 +193,7 @@
 				422A36E922185FDB003D15E3 /* LaunchScreen.storyboard in Resources */,
 				422A36E622185FDB003D15E3 /* Assets.xcassets in Resources */,
 				422A36E122185FDB003D15E3 /* Main.storyboard in Resources */,
+				422A36FF221861C4003D15E3 /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +207,7 @@
 				422A36DC22185FDB003D15E3 /* AppDelegate.swift in Sources */,
 				422A36E422185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld in Sources */,
 				422A36F7221860A1003D15E3 /* Constants.swift in Sources */,
+				422A36FE221861C4003D15E3 /* RepositoryTableViewCell.swift in Sources */,
 				422A36FB22186175003D15E3 /* RepositoriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
