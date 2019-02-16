@@ -55,4 +55,34 @@ class NetworkManager {
         dataTask.resume()
     }
     
+    
+    func loadCommits(url: String, completition: @escaping ((_ callSucceeded: Bool, _ result: [CommitModel]?)->())) {
+        guard let urlObject = URL(string: url) else {
+            // malformed URL
+            completition(false, nil)
+            return
+        }
+        let dataTask = self.urlSession.dataTask(with: urlObject) { data, response, error in
+            
+            if let httpResponse = response as? HTTPURLResponse {
+                switch httpResponse.statusCode {
+                case (200..<300):
+                    print("call success")
+                    if let data = data {
+                        guard let parsedResponse = try? JSONDecoder().decode([CommitModel].self, from: data) else {
+                            print("failes to parse")
+                            completition(false, nil)
+                            return
+                        }
+                        // I have the data parsed
+                        completition(true, parsedResponse)
+                    }
+                default:
+                    print("server error")
+                }
+            }
+        }
+        dataTask.resume()
+    }
+    
 }
