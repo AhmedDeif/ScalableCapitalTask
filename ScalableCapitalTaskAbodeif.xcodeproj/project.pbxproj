@@ -13,6 +13,7 @@
 		422A36E422185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 422A36E222185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld */; };
 		422A36E622185FDB003D15E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422A36E522185FDB003D15E3 /* Assets.xcassets */; };
 		422A36E922185FDB003D15E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 422A36E722185FDB003D15E3 /* LaunchScreen.storyboard */; };
+		422A36F7221860A1003D15E3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A36F6221860A1003D15E3 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		422A36E522185FDB003D15E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		422A36E822185FDB003D15E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		422A36EA22185FDB003D15E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		422A36F6221860A1003D15E3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,10 @@
 		422A36DA22185FDB003D15E3 /* ScalableCapitalTaskAbodeif */ = {
 			isa = PBXGroup;
 			children = (
+				422A36F522186093003D15E3 /* Models */,
+				422A36F422186088003D15E3 /* ViewModels */,
+				422A36F122186051003D15E3 /* Views */,
+				422A36F02218604A003D15E3 /* Utils */,
 				422A36DB22185FDB003D15E3 /* AppDelegate.swift */,
 				422A36DD22185FDB003D15E3 /* ViewController.swift */,
 				422A36DF22185FDB003D15E3 /* Main.storyboard */,
@@ -65,6 +71,51 @@
 				422A36E222185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld */,
 			);
 			path = ScalableCapitalTaskAbodeif;
+			sourceTree = "<group>";
+		};
+		422A36F02218604A003D15E3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				422A36F22218605C003D15E3 /* NetworkLayer */,
+				422A36F6221860A1003D15E3 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		422A36F122186051003D15E3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				422A36F8221860B8003D15E3 /* TableViewCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		422A36F22218605C003D15E3 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		422A36F422186088003D15E3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		422A36F522186093003D15E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		422A36F8221860B8003D15E3 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +192,7 @@
 				422A36DE22185FDB003D15E3 /* ViewController.swift in Sources */,
 				422A36DC22185FDB003D15E3 /* AppDelegate.swift in Sources */,
 				422A36E422185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld in Sources */,
+				422A36F7221860A1003D15E3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
