@@ -24,8 +24,8 @@ class RepositoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setData() {
-        
+    func setData(fromModel: RepositoryModel) {
+        self.repoNameUILabel.text = fromModel.name ?? "Repository name unavailable"
     }
     
 }

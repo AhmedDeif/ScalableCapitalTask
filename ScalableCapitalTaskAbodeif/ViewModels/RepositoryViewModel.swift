@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  RepositoryViewModel.swift
 //  ScalableCapitalTaskAbodeif
 //
 //  Created by Ahmed Abodeif on 2/16/19.
@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct Constants {
+class RepositoryViewModel {
     
-}
-
-struct API {
-    static let getAllRepos = "https://api.github.com/users/mralexgray/repos"
+    var isDataTaskInProgress: Bool = false
+    var repository: RepositoryModel?
+    
 }

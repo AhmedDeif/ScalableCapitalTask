@@ -23,13 +23,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="1000" text="Repository: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJ8-DX-NfX">
-                                <rect key="frame" x="14" y="20" width="286" height="19.5"/>
+                                <rect key="frame" x="20" y="20" width="280" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1F-KJ-Pea">
-                                <rect key="frame" x="14" y="59.5" width="286" height="40.5"/>
+                                <rect key="frame" x="20" y="59.5" width="280" height="40.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                             <constraint firstItem="mHF-pe-ZYF" firstAttribute="trailing" secondItem="D1F-KJ-Pea" secondAttribute="trailing" constant="20" id="3J6-Bc-gRH"/>
                             <constraint firstItem="D1F-KJ-Pea" firstAttribute="top" secondItem="YJ8-DX-NfX" secondAttribute="bottom" constant="20" id="FQg-VF-GfD"/>
                             <constraint firstItem="mHF-pe-ZYF" firstAttribute="trailing" secondItem="YJ8-DX-NfX" secondAttribute="trailing" constant="20" id="WWY-5x-BDX"/>
-                            <constraint firstItem="YJ8-DX-NfX" firstAttribute="leading" secondItem="mHF-pe-ZYF" secondAttribute="leading" constant="14" id="c4k-Gu-Oz6"/>
+                            <constraint firstItem="YJ8-DX-NfX" firstAttribute="leading" secondItem="mHF-pe-ZYF" secondAttribute="leading" constant="20" id="c4k-Gu-Oz6"/>
                             <constraint firstItem="D1F-KJ-Pea" firstAttribute="leading" secondItem="YJ8-DX-NfX" secondAttribute="leading" id="eDs-WS-8MY"/>
                             <constraint firstItem="YJ8-DX-NfX" firstAttribute="top" secondItem="mHF-pe-ZYF" secondAttribute="top" constant="20" id="mhL-20-7Xq"/>
                             <constraint firstItem="mHF-pe-ZYF" firstAttribute="bottom" secondItem="D1F-KJ-Pea" secondAttribute="bottom" constant="20" id="tY6-7n-wsM"/>

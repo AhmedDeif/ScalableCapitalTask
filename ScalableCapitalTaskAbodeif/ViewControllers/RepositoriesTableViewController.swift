@@ -11,15 +11,39 @@ import UIKit
 class RepositoriesTableViewController: UITableViewController {
 
     let cellReuseIdentifier = "RepositoryTableViewCell"
+    var repositoryViewModels: [RepositoryViewModel] = []
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
+        fetchData()
     }
 
     
     func registerCells() {
         self.tableView.register(UINib(nibName: cellReuseIdentifier, bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
+    }
+    
+    
+    func fetchData() {
+        NetworkManager.shared().loadRepos(url: API.getAllRepos) { (isSuccess, response) in
+            if isSuccess {
+                self.repositoryViewModels.removeAll()
+                for repo in response! {
+                    let viewModel = RepositoryViewModel()
+                    viewModel.repository = repo
+                    self.repositoryViewModels.append(viewModel)
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            else {
+                print("Failed to fetch repos from network")
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -30,11 +54,15 @@ class RepositoriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return repositoryViewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! RepositoryTableViewCell
+        let viewModel = self.repositoryViewModels[indexPath.row]
+        if viewModel.repository != nil {
+            cell.setData(fromModel: viewModel.repository!)
+        }
         return cell
     }
 
