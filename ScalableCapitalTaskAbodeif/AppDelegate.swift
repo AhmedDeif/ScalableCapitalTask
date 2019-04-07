@@ -8,17 +8,119 @@
 
 import UIKit
 import CoreData
+import Firebase
+import gameballSDK
+import FirebaseInstanceID
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
+    var gameballApp: GameballApp?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         NetworkManager.setPresistantLayer(presistantContainer: self.persistentContainer)
+//        FirebaseApp.configure()
+        let gameball = GameballApp.init(APIKey: "8fdfd2dffd-9mnvhu25d6c3d", playerId: "SomeGuid16")
+        self.gameballApp = gameball
+        
+//        gameball.configureFireBase()
+//        gameball.printGameballBundle()
+//        gameball.configureFirebaseTest()
+        
+        
+//        if #available(iOS 10.0, *) {
+//            // For iOS 10 display notification (sent via APNS)
+//            UNUserNotificationCenter.current().delegate = self
+//
+//            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//            UNUserNotificationCenter.current().requestAuthorization(
+//                options: authOptions,
+//                completionHandler: {_, _ in })
+//            //            Messaging.messaging().delegate = self
+////            Messaging.messaging().retrieveFCMToken(forSenderID: "835711326098") { (token, error) in
+////                print("got a token")
+////                debugPrint(token)
+////                debugPrint(error)
+////            }
+//        } else {
+//            let settings: UIUserNotificationSettings =
+//                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//            application.registerUserNotificationSettings(settings)
+//        }
+        
+//        Messaging.messaging().delegate = self
+//
+//        application.registerForRemoteNotifications()
+//
+//        InstanceID.instanceID().instanceID { (result, error) in
+//            if let error = error {
+//                print("Error fetching remote instance ID: \(error)")
+//            } else if let result = result {
+//                print("Remote instance ID token: \(result.token)")
+//                //                self.instanceIDTokenMessage?.token  = "Remote InstanceID token: \(result.token)"
+//            }
+//        }
+        apnsPush()
         return true
+    }
+    
+    func apnsPush() {
+        registerForPushNotifications()
+    }
+    
+    func registerForPushNotifications() {
+        UNUserNotificationCenter.current() // 1
+            .requestAuthorization(options: [.alert, .sound, .badge]) { // 2
+                granted, error in
+                print("Permission granted: \(granted)")
+                guard granted else { return }
+                self.getNotificationSettings()
+        }
+    }
+    
+    func getNotificationSettings() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            print("Notification settings: \(settings)")
+            guard settings.authorizationStatus == .authorized else { return }
+            DispatchQueue.main.async {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+    }
+    
+    
+    func application(
+        _ application: UIApplication,
+        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+        ) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+    }
+    
+    func application(
+        _ application: UIApplication,
+        didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register: \(error)")
+    }
+
+
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        let dataDict:[String: String] = ["token": fcmToken]
+        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    func applicationReceivedRemoteMessage(_ remoteMessage: MessagingRemoteMessage) {
+        print("applicationReceivedRemoteMessage function")
+        print(remoteMessage.appData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

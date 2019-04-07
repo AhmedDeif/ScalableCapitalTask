@@ -1,0 +1,47 @@
+{
+  "name": "gameballSDK",
+  "platforms": {
+    "ios": "12.0"
+  },
+  "summary": "gameball SDK pod.",
+  "requires_arc": true,
+  "version": "0.2.1",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ahmed Abodeif": "ahmed.adel.abodeif@gmail.com"
+  },
+  "homepage": "https://github.com/AhmedDeif/gameballSDK",
+  "source": {
+    "git": "https://AhmedDeif@bitbucket.org/gameball/gb-mobile-ios.git",
+    "tag": "0.2.1"
+  },
+  "frameworks": "UIKit",
+  "static_framework": true,
+  "dependencies": {
+    "Firebase": [
+
+    ],
+    "XLPagerTabStrip": [
+
+    ],
+    "Firebase/Core": [
+
+    ],
+    "Firebase/Messaging": [
+
+    ]
+  },
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO",
+    "OTHER_LDFLAGS": "$(inherited) -framework \"gameballSDK\""
+  },
+  "source_files": "gameballSDK/**/*.{swift}",
+  "resources": [
+    "gameballSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}",
+    "gameballSDK/GoogleService-InfoGameball.plist"
+  ],
+  "swift_version": "4.2"
+}

@@ -21,6 +21,9 @@
 		422A37052218685A003D15E3 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A37042218685A003D15E3 /* RepositoryViewModel.swift */; };
 		422A370722186B90003D15E3 /* CommitDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A370622186B90003D15E3 /* CommitDetailsModel.swift */; };
 		422A37092218765D003D15E3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A37082218765D003D15E3 /* Extensions.swift */; };
+		427E40F82219418600937C9E /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427E40F72219418600937C9E /* testViewController.swift */; };
+		42C059D42226C8770070A147 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C059D32226C8770070A147 /* Test2ViewController.swift */; };
+		AC3DFB013DFCD648E0EC89EF /* Pods_ScalableCapitalTaskAbodeif.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED965D2D4DE408D2E99C7D5 /* Pods_ScalableCapitalTaskAbodeif.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,12 @@
 		422A37042218685A003D15E3 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
 		422A370622186B90003D15E3 /* CommitDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitDetailsModel.swift; sourceTree = "<group>"; };
 		422A37082218765D003D15E3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4272E45B223D88EA00973D4F /* ScalableCapitalTaskAbodeif.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScalableCapitalTaskAbodeif.entitlements; sourceTree = "<group>"; };
+		427E40F72219418600937C9E /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		42C059D32226C8770070A147 /* Test2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
+		986AACB803B2C1D30289D3C4 /* Pods-ScalableCapitalTaskAbodeif.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScalableCapitalTaskAbodeif.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif.debug.xcconfig"; sourceTree = "<group>"; };
+		C4DF691EB161D869BAB7C15C /* Pods-ScalableCapitalTaskAbodeif.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScalableCapitalTaskAbodeif.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif.release.xcconfig"; sourceTree = "<group>"; };
+		DED965D2D4DE408D2E99C7D5 /* Pods_ScalableCapitalTaskAbodeif.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScalableCapitalTaskAbodeif.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3DFB013DFCD648E0EC89EF /* Pods_ScalableCapitalTaskAbodeif.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +66,11 @@
 		422A36CF22185FDB003D15E3 = {
 			isa = PBXGroup;
 			children = (
+				4272E45B223D88EA00973D4F /* ScalableCapitalTaskAbodeif.entitlements */,
 				422A36DA22185FDB003D15E3 /* ScalableCapitalTaskAbodeif */,
 				422A36D922185FDB003D15E3 /* Products */,
+				D98FC9B3D167771AED3C2327 /* Pods */,
+				C08B228EEC6EB3C56381143C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,8 +156,27 @@
 			isa = PBXGroup;
 			children = (
 				422A36FA22186175003D15E3 /* RepositoriesTableViewController.swift */,
+				427E40F72219418600937C9E /* testViewController.swift */,
+				42C059D32226C8770070A147 /* Test2ViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C08B228EEC6EB3C56381143C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DED965D2D4DE408D2E99C7D5 /* Pods_ScalableCapitalTaskAbodeif.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D98FC9B3D167771AED3C2327 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				986AACB803B2C1D30289D3C4 /* Pods-ScalableCapitalTaskAbodeif.debug.xcconfig */,
+				C4DF691EB161D869BAB7C15C /* Pods-ScalableCapitalTaskAbodeif.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 422A36ED22185FDB003D15E3 /* Build configuration list for PBXNativeTarget "ScalableCapitalTaskAbodeif" */;
 			buildPhases = (
+				FD8AE136E0A1C5FF4973CF95 /* [CP] Check Pods Manifest.lock */,
 				422A36D422185FDB003D15E3 /* Sources */,
 				422A36D522185FDB003D15E3 /* Frameworks */,
 				422A36D622185FDB003D15E3 /* Resources */,
+				7EE6168E99C506F814FB6564 /* [CP] Embed Pods Frameworks */,
+				B39B7DFDEC90BA0FACDBB391 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +214,14 @@
 				TargetAttributes = {
 					422A36D722185FDB003D15E3 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -214,14 +257,149 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7EE6168E99C506F814FB6564 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B39B7DFDEC90BA0FACDBB391 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif-resources.sh",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/BackButton/backButt.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/BackButton/backButto.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/BackButton/backButton.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeAchievedImage/ChallengeAchievedImage.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeAchievedImage/ChallengeAchievedImage@2x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeAchievedImage/ChallengeAchievedImage@3x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeInProgressImage/ChallengeInProgressImage.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeInProgressImage/ChallengeInProgressImage@2x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeInProgressImage/ChallengeInProgressImage@3x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeLockedImage/ChallengeLockedImage.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeLockedImage/ChallengeLockedImage@2x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/ChallengeLockedImage/ChallengeLockedImage@3x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/delete/icons8-delete-20.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/gameballIcon/Gameball-Grey-Icon.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIcon/LockIcon.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIcon/LockIcon@2x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIcon/LockIcon@3x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIconLarge/LockIconLarge.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIconLarge/LockIconLarge@2x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/LockIconLarge/LockIconLarge@3x.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/profilePlaceholder/icons8-user-64.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/profilePlaceholder/icons8-user-96.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Assets/Images/Trophy/trophy.png",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Presentation/Container/ParentViewController.xib",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Presentation/CustomViews/tabbarCell/TabbarCollectionViewCell.xib",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Presentation/GameballViewController/GameballViewController.xib",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Presentation/GameballViewController/ProfileHeaderView/ProfileHeaderView.xib",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/Presentation/Leaderboard/LeaderboardViewController.xib",
+				"${PODS_ROOT}/../../gameballSDK/gameballSDK/GoogleService-InfoGameball.plist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/backButt.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/backButto.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/backButton.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeAchievedImage.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeAchievedImage@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeAchievedImage@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeInProgressImage.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeInProgressImage@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeInProgressImage@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeLockedImage.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeLockedImage@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ChallengeLockedImage@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-delete-20.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Gameball-Grey-Icon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIcon.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIcon@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIcon@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIconLarge.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIconLarge@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LockIconLarge@3x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-user-64.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/icons8-user-96.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/trophy.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ParentViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TabbarCollectionViewCell.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GameballViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ProfileHeaderView.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/LeaderboardViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleService-InfoGameball.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScalableCapitalTaskAbodeif/Pods-ScalableCapitalTaskAbodeif-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD8AE136E0A1C5FF4973CF95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScalableCapitalTaskAbodeif-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		422A36D422185FDB003D15E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				422A37052218685A003D15E3 /* RepositoryViewModel.swift in Sources */,
+				42C059D42226C8770070A147 /* Test2ViewController.swift in Sources */,
 				422A37012218644C003D15E3 /* NetworkManager.swift in Sources */,
 				422A36DC22185FDB003D15E3 /* AppDelegate.swift in Sources */,
+				427E40F82219418600937C9E /* testViewController.swift in Sources */,
 				422A370722186B90003D15E3 /* CommitDetailsModel.swift in Sources */,
 				422A36E422185FDB003D15E3 /* ScalableCapitalTaskAbodeif.xcdatamodeld in Sources */,
 				422A37092218765D003D15E3 /* Extensions.swift in Sources */,
@@ -372,18 +550,23 @@
 		};
 		422A36EE22185FDB003D15E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 986AACB803B2C1D30289D3C4 /* Pods-ScalableCapitalTaskAbodeif.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3FNCL22L6F;
+				CODE_SIGN_ENTITLEMENTS = ScalableCapitalTaskAbodeif.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6F44KY5YHS;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ScalableCapitalTaskAbodeif/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Abodeif.ScalableCapitalTaskAbodeifAhmed;
+				PRODUCT_BUNDLE_IDENTIFIER = abodeif.gameball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = amrGameball;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,18 +574,23 @@
 		};
 		422A36EF22185FDB003D15E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4DF691EB161D869BAB7C15C /* Pods-ScalableCapitalTaskAbodeif.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3FNCL22L6F;
+				CODE_SIGN_ENTITLEMENTS = ScalableCapitalTaskAbodeif.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6F44KY5YHS;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ScalableCapitalTaskAbodeif/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Abodeif.ScalableCapitalTaskAbodeifAhmed;
+				PRODUCT_BUNDLE_IDENTIFIER = abodeif.gameball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = amrGameball;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
